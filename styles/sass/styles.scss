@@ -1,0 +1,641 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap");
+
+$negro: #000000;
+$blanco: #ffffff;
+$soft: #455560;
+$primary: #fbb613;
+$secondary: #ed1c2e;
+
+$transition: all 300ms ease;
+
+@mixin titles() {
+  text-align: center;
+
+  small {
+    color: $primary;
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+}
+
+::-webkit-scrollbar {
+  background: $negro;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  color: $negro;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+a {
+  color: $negro;
+  transition: $transition;
+  text-decoration: none;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+section {
+  margin-bottom: 6rem;
+}
+
+#home {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/img/portada.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+  .cortina {
+    width: inherit;
+    height: inherit;
+    background: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: $blanco;
+
+    .logo-container {
+      width: 14rem;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .scroll {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: rotate(-90deg);
+      font-size: 1.2rem;
+    }
+
+    .title {
+      padding: 0 3rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      h1 {
+        text-transform: uppercase;
+        font-size: 4rem;
+      }
+
+      a {
+        text-transform: uppercase;
+        color: $blanco;
+        border: 1px solid $blanco;
+        width: max-content;
+        padding: 1.5rem;
+        border-radius: 10px;
+        font-size: 1.2rem;
+
+        &:hover {
+          background: $blanco;
+          border-color: transparent;
+          color: $negro;
+        }
+      }
+    }
+
+    .redes {
+      position: absolute;
+      top: 50%;
+      right: 2%;
+
+      .icon {
+        color: $blanco;
+        font-size: 3rem;
+        transition: $transition;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+#about {
+  .logos {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1rem;
+
+    .logo-box {
+      width: 10rem;
+    }
+  }
+
+  .container {
+    width: 75%;
+    margin: 0 auto;
+
+    .title {
+      text-align: center;
+
+      small {
+        color: $primary;
+        font-size: 1.2rem;
+      }
+
+      h2 {
+        font-size: 3rem;
+      }
+
+      p {
+        color: #455560;
+        font-size: 1.3rem;
+      }
+
+      .title-container {
+        margin: 2.5rem 0;
+      }
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      padding-top: 3rem;
+      gap: 1rem;
+
+      .card {
+        border: 1px solid $negro;
+        padding: 1.5rem;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        text-align: center;
+        transition: $transition;
+        cursor: default;
+
+        h3 {
+          color: $secondary;
+          font-size: 1.8rem;
+        }
+
+        p {
+          color: $soft;
+          font-size: 1.2rem;
+        }
+
+        .icon {
+          font-size: 2.5rem;
+          transition: $transition;
+        }
+
+        &:hover {
+          border-color: $primary;
+
+          .icon {
+            color: $secondary;
+          }
+        }
+      }
+
+      .card-2 {
+        .valores-list {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 1.5rem;
+          justify-content: center;
+
+          .check-icon {
+            transition: $transition;
+            color: $negro;
+          }
+        }
+
+        &:hover {
+          .check-icon {
+            color: $secondary;
+          }
+        }
+      }
+    }
+  }
+}
+
+#services {
+  .titles {
+    @include titles();
+  }
+
+  .cards {
+    width: 75%;
+    margin: 3rem auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1rem;
+
+    .card {
+      border: 1px solid $negro;
+      border-radius: 20px;
+      padding: 1.5rem 1rem;
+      cursor: default;
+      transition: $transition;
+
+      .icon {
+        font-size: 2.5rem;
+        transition: $transition;
+      }
+
+      h3 {
+        font-size: 1.8rem;
+        margin: 1rem 0;
+      }
+
+      p {
+        font-size: 1.2rem;
+        line-height: 2rem;
+      }
+
+      &:hover {
+        background: $primary;
+        border-color: transparent;
+
+        .icon {
+          color: $secondary;
+        }
+      }
+    }
+  }
+
+  .swiper {
+    display: none;
+  }
+
+  .desliza {
+    display: none;
+  }
+}
+
+#contact {
+  padding: 2rem 0;
+  background: $negro;
+  color: $blanco;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin-bottom: 0;
+
+  .title {
+    @include titles();
+  }
+
+  .ws {
+    background: $blanco;
+    color: $negro;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    gap: 0.5rem;
+    cursor: default;
+    transition: $transition;
+    border: 1px solid transparent;
+
+    .icon {
+      color: $secondary;
+      font-size: 2.5rem;
+    }
+
+    h3,
+    h4 {
+      font-size: 1.5rem;
+    }
+
+    a {
+      color: $secondary;
+      font-size: 1.1rem;
+    }
+
+    &:hover {
+      background: transparent;
+      border-color: #fbb613;
+      color: $blanco;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 50%;
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      background: $blanco;
+      resize: none;
+      color: $negro;
+      border: none;
+      outline: 0;
+    }
+
+    button {
+      width: max-content;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      background: transparent;
+      color: $blanco;
+      border: 1px solid $secondary;
+      transition: $transition;
+
+      &:hover {
+        border-color: transparent;
+        background: $secondary;
+      }
+    }
+  }
+}
+
+footer {
+  background: $negro;
+
+  .container {
+    width: 90%;
+    margin: 0 auto;
+    color: $blanco;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+
+    .logo-container {
+      width: 12rem;
+
+    }
+
+    .permalinks {
+      display: flex;
+      gap: 1rem;
+      font-size: 1.3rem;
+
+      a {
+        color: $blanco;
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+
+    .copy {
+      p {
+        font-weight: 300;
+      }
+    }
+  }
+
+  .container-2 {
+
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    margin-top: 3rem;
+
+
+    .logo {
+      width: 5rem;
+      display: block;
+      margin-left: auto;
+    }
+  }
+}
+
+// Laptops
+@media screen and (max-width: 1280px) {
+  #about {
+    .container {
+      width: 85%;
+    }
+  }
+
+  #services {
+    .cards {
+      width: 85%;
+    }
+  }
+}
+
+// Tablets
+@media screen and (max-width: 768px) {
+  #home {
+    .cortina {
+      .scroll {
+        display: none;
+      }
+
+      .title {
+        padding: 0;
+        width: 90%;
+
+        h1 {
+          font-size: 2.8rem;
+          line-height: 4.5rem;
+        }
+      }
+
+      .redes {
+        display: none;
+      }
+    }
+  }
+
+  #about {
+    .logos {
+      .logo-box {
+        width: 8rem;
+      }
+    }
+
+    .container {
+      width: 90%;
+
+      .title {
+        p {
+          line-height: 2rem;
+        }
+      }
+    }
+  }
+
+  #services {
+    .cards {
+      display: none;
+    }
+
+    .swiper {
+      margin-top: 3rem;
+      display: block;
+      width: 90%;
+      height: auto;
+      padding-bottom: 2rem;
+
+      .card {
+        border: 1px solid $negro;
+        border-radius: 20px;
+        padding: 1.5rem 1rem;
+        cursor: default;
+        transition: $transition;
+
+        .icon {
+          font-size: 2.5rem;
+          transition: $transition;
+        }
+
+        h3 {
+          font-size: 1.8rem;
+          margin: 1rem 0;
+        }
+
+        p {
+          font-size: 1.2rem;
+          line-height: 2rem;
+        }
+
+        &:hover {
+          background: $primary;
+          border-color: transparent;
+
+          .icon {
+            color: $secondary;
+          }
+        }
+      }
+
+      .swiper-pagination-bullet {
+        background: $negro;
+      }
+    }
+
+    .desliza {
+      display: block;
+      text-align: end;
+      width: 90%;
+      margin: 0 auto;
+      font-size: 1.3rem;
+    }
+  }
+
+  #contact {
+    gap: 3rem;
+
+    .title {
+      width: 90%;
+      margin: 0 auto;
+
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+
+    .ws {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    form {
+      width: 90%;
+    }
+  }
+
+  footer {
+
+    .container {
+      gap: 2.5rem;
+    
+      .permalinks {
+        gap: 1.5rem;
+        font-size: 1.1rem;
+      }
+  
+    }
+  
+  }
+}
+
+// Phones
+@media screen and (max-width: 500px) {
+  section {
+    margin-bottom: 5rem;
+  }
+
+  #about {
+    .logos {
+      .logo-box {
+        width: 7rem;
+      }
+    }
+
+    .container {
+      width: 90%;
+
+      .title {
+        .title-container {
+          margin: 2rem 0;
+        }
+
+        p {
+          line-height: 2rem;
+        }
+
+        h2 {
+          font-size: 2.5rem;
+        }
+      }
+
+      .cards {
+        .card-2 {
+          .valores-list {
+            gap: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  #services {
+    .titles {
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
